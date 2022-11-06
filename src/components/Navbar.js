@@ -1,13 +1,13 @@
 import "./Navbar.css";
 import { Link } from "react-router-dom";
-import Temple from "../assets/temple.svg";
+import Cartoon from "../assets/cartoon.svg";
 
 export default function Navbar() {
   return (
     <div className="navbar">
       <ul>
         <li className="logo">
-          <img src={Temple} alt="dogo logo" />
+          <img src={Cartoon} alt="dogo logo" />
           <span>Frankenmanage</span>
         </li>
         <li>
