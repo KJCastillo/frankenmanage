@@ -1,16 +1,19 @@
-import { useState } from "react"
-import "./Create.css"
+import { useState } from "react";
+import "./Create.css";
 
 export default function Create() {
-  const [name, setName] = useState('');
-  const [details, setDetails] = useState('')
-  const [dueDate, setDueDate] = useState('')
-  const [category, setCategory] = useState('')
-  const [assignedUsers, setAssignedUsers] = useState([])
-  const [formError, setFormError] = useState(null)
+  // form field values
+  const [name, setName] = useState("");
+  const [details, setDetails] = useState("");
+  const [dueDate, setDueDate] = useState("");
+  const [category, setCategory] = useState("");
+  const [assignedUsers, setAssignedUsers] = useState([]);
 
   const handleSubmit = async (e) => {
-    e.preventDefault()}
+    e.preventDefault();
+
+    console.log(name, details, dueDate);
+  };
 
   return (
     <div className="create-form">
@@ -19,32 +22,32 @@ export default function Create() {
         <label>
           <span>Project name:</span>
           <input
-            required 
-            type="text" 
+            required
+            type="text"
             onChange={(e) => setName(e.target.value)}
             value={name}
           />
         </label>
         <label>
           <span>Project Details:</span>
-          <textarea 
+          <textarea
             required
             onChange={(e) => setDetails(e.target.value)}
-            value={details} 
+            value={details}
           ></textarea>
         </label>
         <label>
           <span>Set due date:</span>
           <input
-            required 
-            type="date" 
-            onChange={(e) => setDueDate(e.target.value)} 
+            required
+            type="date"
+            onChange={(e) => setDueDate(e.target.value)}
             value={dueDate}
           />
         </label>
         <label>
           <span>Project category:</span>
-          
+          {/* select here later */}
         </label>
         <label>
           <span>Assign to:</span>
@@ -52,9 +55,7 @@ export default function Create() {
         </label>
 
         <button className="btn">Add Project</button>
-
-        {formError && <p className="error">{formError}</p>}
       </form>
     </div>
-  )
+  );
 }
