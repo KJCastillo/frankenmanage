@@ -1,7 +1,14 @@
-import "./Dashboard.css"
+import "./Dashboard.css";
+import { useCollection } from "../hooks/useCollection";
 
 export default function Dashboard() {
+  const { documents, error } = useCollection("projects");
+
   return (
-    <div>Dashboard</div>
-  )
+    <div>
+      <h2 className="page-title">Dashboard</h2>
+      {error && <p className="error">{error}</p>}
+      {documents && documents.map((doc) => <p key={doc.id}>{doc.name}</p>)}
+    </div>
+  );
 }
