@@ -1,12 +1,12 @@
 import { useParams } from "react-router-dom";
-import { useDocument } from "../hooks/useDocument";
+import { useDocument } from "../../hooks/useDocument";
 import "./Project.css";
-import ProjectComments from "./projects/ProjectComments";
-import ProjectSummary from "./projects/ProjectSummary";
+import ProjectComments from "./ProjectComments";
+import ProjectSummary from "./ProjectSummary";
 
 export default function Project() {
   const { id } = useParams();
-  const { error, document } = useDocument("projects", id);
+  const { document, error } = useDocument("projects", id);
 
   if (error) {
     return <div className="error">{error}</div>;
