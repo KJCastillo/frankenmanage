@@ -20,7 +20,7 @@ export default function ProjectComments({ project }) {
     };
 
     await updateDocument(project.id, {
-      comments: [...project.comment, commentToAdd],
+      comments: [...project.comments, commentToAdd],
     });
     if (!response.error) {
       setNewComment("");
