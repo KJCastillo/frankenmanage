@@ -4,8 +4,8 @@ import { useAuthContext } from "../../hooks/useAuthContext";
 import { useFirestore } from "../../hooks/useFirestore";
 
 export default function ProjectComments({ project }) {
-  const { updateDocument, response } = useFirestore("projects");
   const { user } = useAuthContext();
+  const { updateDocument, response } = useFirestore("projects");
   const [newComment, setNewComment] = useState("");
 
   const handleSubmit = async (e) => {
