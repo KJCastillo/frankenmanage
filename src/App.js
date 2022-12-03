@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import { useAuthContext } from "./hooks/useAuthContext";
 import "./App.css";
-import Dashboard from "./pages/Dashboard";
+import Dashboard from "./pages/dashboard/Dashboard";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Create from "./pages/Create";
